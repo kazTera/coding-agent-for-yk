@@ -8,7 +8,7 @@
 
 | スキル | ディレクトリ | 内容 |
 |--------|------------|------|
-| MySQL Design | `mysql-design/` | スキーマ設計、インデックス戦略、クエリ最適化 |
+| Neon PostgreSQL Design | `neon-postgresql-design/` | スキーマ設計、インデックス戦略、クエリ最適化、Neon固有機能 |
 
 ## 利用方法
 

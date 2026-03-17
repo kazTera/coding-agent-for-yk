@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## プロジェクト概要
 
-MySQL を使用したアプリケーションの設計ドキュメントを、3ステップのワークフローで段階的に策定するプロジェクト。コードは書かない。設計ドキュメント（Markdown）を生成する。
+Neon（PostgreSQL）を使用したアプリケーションの設計ドキュメントを、3ステップのワークフローで段階的に策定するプロジェクト。コードは書かない。設計ドキュメント（Markdown）を生成する。
 
 ## ディレクトリ構造
 
@@ -12,7 +12,7 @@ MySQL を使用したアプリケーションの設計ドキュメントを、3�
 |------------|------|
 | `workflow/` | ワークフロー定義（3ステップ） |
 | `output/` | 生成される成果物 |
-| `skills/` | エージェント用リファレンス（MySQL設計ベストプラクティス） |
+| `skills/` | エージェント用リファレンス（Neon PostgreSQL設計ベストプラクティス） |
 | `agents/` | カスタムエージェント定義 |
 | `.claude/commands/` | スラッシュコマンド |
 | `research/` | 調査資料（必要に応じて追加） |
@@ -43,26 +43,30 @@ Step 03: 実装計画       → output/03_implementation_plan.md
 | Database Designer | `database-designer.md` | データベース設計 |
 | Design Reviewer | `design-reviewer.md` | 設計レビュー |
 
-## MySQL 設計ガイドライン
+## Neon (PostgreSQL) 設計ガイドライン
 
 ### データ型選択
 
 | 用途 | 推奨型 |
 |------|--------|
-| 主キー | BIGINT UNSIGNED AUTO_INCREMENT |
-| 日時 | DATETIME |
-| 金額 | DECIMAL(19,4) |
-| フラグ | TINYINT(1) |
+| 主キー | BIGSERIAL |
+| UUID | UUID（gen_random_uuid()） |
+| 日時 | TIMESTAMP / TIMESTAMPTZ |
+| 金額 | NUMERIC(19,4) |
+| フラグ | BOOLEAN |
+| JSON | JSONB |
 
 ### インデックス設計
 
 - カーディナリティの高いカラムを優先
 - WHERE句で頻繁に使用するカラム
 - 複合インデックスは左端から使用される
+- 部分インデックスで不要なデータを除外
+- JSONB には GIN インデックスを使用
 
 ### トランザクション
 
-- デフォルト分離レベル: REPEATABLE READ
+- デフォルト分離レベル: READ COMMITTED
 - 楽観的ロック: version カラムで競合検出
 
 ## 出力フォーマット規約

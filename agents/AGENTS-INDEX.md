@@ -8,7 +8,7 @@
 
 | エージェント | ファイル | 推奨モデル | 用途 |
 |-------------|---------|-----------|------|
-| Database Designer | `database-designer.md` | sonnet | MySQL データベース設計 |
+| Database Designer | `database-designer.md` | sonnet | Neon (PostgreSQL) データベース設計 |
 | Design Reviewer | `design-reviewer.md` | sonnet | 設計レビュー |
 
 ## 利用方法

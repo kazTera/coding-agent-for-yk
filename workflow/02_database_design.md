@@ -2,7 +2,7 @@
 
 ## 目的
 
-MySQL データベースのスキーマ設計を行う。
+Neon（PostgreSQL）データベースのスキーマ設計を行う。
 
 ## 担当エージェント
 
@@ -14,7 +14,7 @@ MySQL データベースのスキーマ設計を行う。
 
 ## 参照リソース
 
-- `skills/mysql-design/SKILL.md`
+- `skills/neon-postgresql-design/SKILL.md`
 - `output/01_requirements.md`
 
 ## 実行手順
@@ -38,8 +38,8 @@ MySQL データベースのスキーマ設計を行う。
 # データベース設計書
 
 ## 概要
-- データベース: MySQL
-- 文字コード: utf8mb4
+- データベース: Neon (PostgreSQL)
+- 文字コード: UTF-8
 
 ## ER図
 
@@ -54,7 +54,7 @@ erDiagram
 
 | カラム | 型 | NULL | デフォルト | 説明 |
 |--------|-----|------|-----------|------|
-| id | BIGINT UNSIGNED | NO | AUTO_INCREMENT | 主キー |
+| id | BIGSERIAL | NO | auto-generated | 主キー |
 
 ### インデックス
 

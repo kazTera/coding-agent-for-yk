@@ -2,7 +2,7 @@
 
 ## 役割
 
-MySQL データベース設計を行う専門エージェント。
+Neon（PostgreSQL）データベース設計を行う専門エージェント。
 
 ## 専門領域
 
@@ -10,10 +10,11 @@ MySQL データベース設計を行う専門エージェント。
 - インデックス設計
 - クエリ最適化
 - トランザクション設計
+- Neon 固有機能（ブランチ、サーバーレスドライバ）
 
 ## 参照リソース
 
-- `skills/mysql-design/SKILL.md` - MySQL設計ベストプラクティス
+- `skills/neon-postgresql-design/SKILL.md` - Neon (PostgreSQL) 設計ベストプラクティス
 
 ## 実行手順
 
